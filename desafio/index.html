@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Autenticación</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pantalla activa" id="pantalla-login">
+            <h2>Iniciar Sesión</h2>
+            <form id="formulario-login">
+                <div class="grupo-input">
+                    <input type="email" id="email-login" placeholder="ejemplo@correo.com" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <input type="password" id="contraseña-login" placeholder="Contraseña" required>
+                    <button type="button" class="mostrar-contraseña">👁</button>
+                </div>
+
+                <div class="intentos">Intentos restantes: <span id="contador-intentos">3</span></div>
+                
+                <button type="submit" class="btn">Iniciar Sesión</button>
+            </form>
+            
+            <div class="enlaces">
+                <a href="#" id="enlace-olvidaste">¿Olvidaste tu contraseña?</a>
+                <a href="#" id="enlace-registrar">Crear cuenta nueva</a>
+            </div>
+        </div>
+
+        <!-- Pantalla de Registro -->
+        <div class="pantalla" id="pantalla-registro">
+            <h2>Crear Cuenta</h2>
+            <form id="formulario-registro">
+                <div class="grupo-input">
+                    <input type="text" id="nombre-completo" placeholder="Juan Pérez" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <input type="email" id="email-registro" placeholder="ejemplo@correo.com" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <div class="contenedor-telefono">
+                        <span class="codigo-pais">+591</span>
+                        <input type="tel" id="telefono" placeholder="71234567" maxlength="8" required>
+                    </div>
+                    <div class="ayuda-telefono">Ejemplo: 71234567 (8 dígitos)</div>
+                </div>
+                
+                <div class="grupo-input">
+                    <input type="password" id="contraseña-registro" placeholder="Contraseña segura" required>
+                    <button type="button" class="mostrar-contraseña">👁</button>
+                </div>
+                
+                <button type="submit" class="btn">Registrarse</button>
+            </form>
+            
+            <div class="enlaces">
+                <a href="#" id="enlace-iniciar-sesion">¿Ya tienes cuenta? Inicia sesión</a>
+            </div>
+        </div>
+        <div class="pantalla" id="pantalla-recuperacion">
+            <h2>Recuperar Contraseña</h2>
+            <form id="formulario-recuperacion">
+                <div class="grupo-input">
+                    <input type="email" id="email-recuperacion" placeholder="ejemplo@correo.com" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <input type="password" id="nueva-contraseña" placeholder="Nueva contraseña segura" required>
+                    <button type="button" class="mostrar-contraseña">👁</button>
+                </div>
+                
+                <button type="submit" class="btn">Actualizar Contraseña</button>
+            </form>
+            
+            <div class="enlaces">
+                <a href="#" id="enlace-volver-login">Volver al inicio de sesión</a>
+            </div>
+        </div>
+
+        <!-- Pantalla Bloqueada -->
+        <div class="pantalla" id="pantalla-bloqueada">
+            <h2>Cuenta Bloqueada</h2>
+            <div class="mensaje-bloqueo">
+                <p>Cuenta bloqueada por intentos fallidos.</p>
+                <a href="#" id="enlace-recuperar-bloqueo" class="btn">Recuperar Contraseña</a>
+            </div>
+        </div>
+        <div id="mensaje-sistema"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
